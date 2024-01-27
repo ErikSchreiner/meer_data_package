@@ -58,7 +58,7 @@ def interpolate_df(df, columns, time_col="Time", time_delta="1min", dataloss=Non
     # interpolate values
     df_to_add_to.set_index(time_col, inplace=True)
     df_interpolated = df_to_add_to
-    if catergorical:
+    if categorical:
         df_interpolated[columns] = df_to_add_to[columns].interpolate(method=categorical)
     else:
         df_interpolated[columns] = df_to_add_to[columns].interpolate(method='time')
